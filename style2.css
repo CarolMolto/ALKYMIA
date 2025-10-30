@@ -1,0 +1,184 @@
+* { 
+box-sizing: border-box;
+}
+
+:root {
+  --header-height: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  background-color: rgb(236, 227, 200);
+  padding-top: 80px; /* espacio para el header fijo */
+}
+
+/*ESTILOS CABECERA*/
+.barra {  
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a59e44ff; 
+  padding: 20px;
+  z-index: 1000; /* Para que esté por encima del resto */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+
+.navbar {
+  border: 2px solid red;
+  width: 75%;
+  display: flex;
+  align-items: center;  
+  justify-content:space-around ;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul.menu {  
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul.menu > li {
+  position: relative;
+}
+
+nav a {
+  color: rgb(133, 74, 27);
+  font-size: 40px;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 10px 15px;
+  display: block;
+}
+
+nav ul.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;  
+  background-color: rgba(165, 158, 68, 0.4);  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(4px);  /* sombra/vidrio */  
+  display: none;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+nav ul.submenu li a {
+  padding: 10px;
+  font-size: 17px;
+  color: rgb(133, 74, 27);
+}
+
+nav li.dropdown:hover > .submenu {
+  display: block;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+/*TERMINA CABECERA*/
+
+.main {
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - var(--header-height));
+  margin-top: var(--header-height);
+  display: inline-block;
+  overflow: hidden;
+}
+
+.main h1 {
+  font-size: 30px;
+  color: rgb(55, 153, 153);
+  text-align: center;
+  align-items: center;
+}
+
+@supports not (height: 100dvh) {
+  .main {
+    height: calc(100vh - var(--header-height));
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.arriba {
+  border: 2px solid blue;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.abajo {
+  border: 2px solid blue;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+/*ESTILOS PIE*/
+
+.pie { /* cambiar y ajustar cada tamaño de cada una de las 4 partes!!!!!!!!!!! */
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  background-color: #a59e44ff;
+  bottom: 0;
+}
+
+.logtransp {
+  border: 2px solid blue;
+  height: 100px;
+  width: 100px;
+}
+
+.datos {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  width: 300px;
+}
+
+.legal {
+  border: 2px solid blue;
+  height: 120px;
+  width: 300px;
+}
+
+.redes {
+  border: 2px solid blue;
+  height: 50px;
+  width: 150px;
+}
